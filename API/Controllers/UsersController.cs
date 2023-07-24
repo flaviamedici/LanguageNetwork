@@ -1,3 +1,4 @@
+using API.Controllers;
 using API.Data;
 using API.Entities;
 using Microsoft.AspNetCore.Mvc;
@@ -5,10 +6,8 @@ using Microsoft.EntityFrameworkCore;
 
 namespace API.Controller
 {
-    [ApiController]
-    [Route("api/[controller]")] // api/users
-    
-    public class UsersController : ControllerBase
+        
+    public class UsersController : BaseApiController
     {
         private readonly DataContext _context;
 
@@ -22,6 +21,7 @@ namespace API.Controller
         {
             return await _context.Users.ToListAsync();
         }
+
         [HttpGet("{id}")]
         public async Task<ActionResult<AppUser>> GetUser(int id)
         {
