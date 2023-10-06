@@ -8,7 +8,11 @@ namespace API.DTOs
     {
         [Required]
         public string Username { get; set; }
-
+        [required] public string KnownAs {get; set;}
+        [required] public string Gender { get; set; }
+        [Required] public DateOnly? DateOfBirth { get; set; }
+        [Required] public string City { get; set; }
+        [Required] public string Country { get; set; }
         [Required]
         [StringLength(8, MinimumLength = 4)]
         public string Password { get; set; }
