@@ -44,7 +44,6 @@ loadMembers() {
 }
 
 resetFilters() {
-  
     this.userParams = this.memberService.resetUserParam();
     this.loadMembers();
   
